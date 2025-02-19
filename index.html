@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konser Green Day</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .header {
+            background-color: #28a745;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        .nav {
+            background-color: #333;
+            text-align: center;
+            padding: 10px;
+        }
+        .nav a {
+            text-decoration: none;
+            color: white;
+            margin: 0 15px;
+            cursor: pointer;
+        }
+        .nav a:hover {
+            text-decoration: underline;
+        }
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+        .footer {
+            background-color: #28a745;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        .form-container {
+            text-align: left;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        input[type="text"], input[type="email"], input[type="date"], input[type="number"], select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <table border="1">
+        <tr>
+            <td colspan="2" class="header">
+                <h1>Konser Green Day 2025</h1>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="nav">
+                <a onclick="loadPage('beranda')">Beranda</a>
+                <a onclick="loadPage('tentang-konser')">Tentang Konser</a>
+                <a onclick="loadPage('kontak')">Kontak</a>
+                <a onclick="loadPage('formulir-tiket')">Formulir Tiket</a>
+            </td>
+        </tr>
+        <tr>
+            <td class="content" id="content" colspan="2">
+                <!-- Konten akan dimuat di sini -->
+                <h2>Selamat datang di Website Konser Green Day 2025</h2>
+                <p>Informasi terbaru tentang konser Green Day yang akan datang.</p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="footer">
+                <p>&copy; 2025 Green Day Concert. Semua Hak Dilindungi.</p>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        function loadPage(page) {
+            let content = document.getElementById('content');
+
+            if (page === 'beranda') {
+                content.innerHTML = `
+                    <h2>Selamat datang di Website Konser Green Day 2025</h2>
+                    <p>Konser Green Day yang dinantikan akan segera hadir. Dapatkan informasi lengkap di sini!</p>
+                    <img src="https://lastfm.freetls.fastly.net/i/u/ar0/63a2f9bdd8fc389123b8b8db8a95cc6d" alt="Green Day" />
+                `;
+            } else if (page === 'tentang-konser') {
+                content.innerHTML = `
+                    <h2>Tentang Konser Green Day 2025</h2>
+                    <img src="https://lastfm.freetls.fastly.net/i/u/ar0/63a2f9bdd8fc389123b8b8db8a95cc6d" width="300px" height="300px" alt="Green Day" />
+                    <p>Green Day adalah band punk rock asal Amerika yang dibentuk pada tahun 1987. Mereka dikenal dengan lagu-lagu hits seperti "Boulevard of Broken Dreams", "American Idiot", dan "Wake Me Up When September Ends". Konser Green Day 2025 akan menghibur penggemar dengan penampilan spektakuler!</p>
+                    <p>Lokasi Konser: Jakarta, Bandung, Surabaya.</p>
+                    <p>Tanggal: Juni - Juli 2025.</p>
+                `;
+            } else if (page === 'kontak') {
+                content.innerHTML = `
+                    <h2>Kontak Kami</h2>
+                    <p>Email: info@greendayconcert.com</p>
+                    <p>Telepon: 0800-1234-5678</p>
+                    <p>Alamat: Jl. Konser No. 1, Jakarta, Indonesia</p>
+                `;
+            } else if (page === 'formulir-tiket') {
+                content.innerHTML = `
+                    <h2>Formulir Pemesanan Tiket</h2>
+                    <div class="form-container">
+                        <form id="ticketForm">
+                            <label for="nama">Nama Lengkap:</label>
+                            <input type="text" id="nama" name="nama" required>
+
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+
+                            <label for="tanggal">Tanggal Pemesanan:</label>
+                            <input type="date" id="tanggal" name="tanggal" required>
+
+                            <label for="jumlahTiket">Jumlah Tiket:</label>
+                            <input type="number" id="jumlahTiket" name="jumlahTiket" min="1" max="10" required>
+
+                            <label for="kota">Kota:</label>
+                            <select id="kota" name="kota" required>
+                                <option value="jakarta">Jakarta</option>
+                                <option value="bandung">Bandung</option>
+                                <option value="surabaya">Surabaya</option>
+                            </select>
+
+                            <label for="pembayaran">Metode Pembayaran:</label>
+                            <select id="pembayaran" name="pembayaran" required>
+                                <option value="transfer_bank">Transfer Bank</option>
+                                <option value="kartu_kredit">Kartu Kredit</option>
+                                <option value="e_wallet">E-Wallet (OVO, GoPay, dll.)</option>
+                            </select>
+
+                            <button type="submit">Pesan Tiket</button>
+                        </form>
+                    </div>
+                `;
+            }
+        }
+    </script>
+
+</body>
+</html>
